@@ -1,0 +1,47 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#/home">Home</a>
+    </li>
+    <li class="active">User List</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START PROJECTS BLOCK -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>User List</strong></h3>
+                    <ul class="panel-controls">
+                        <a href="#/user/create" class="btn btn-primary">Create New User</a>
+                    </ul>
+                </div>
+                <div class="panel-body panel_to_refresh" page-height>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered" id="user-list-tbl">
+                            <thead>
+                            <tr ng-init="user.init()">
+                                <th width="10%">First Name</th>
+                                <th width="5%">Last Name</th>
+                                <th width="15%">Date Of Birth</th>
+                                <th width="10%">Country</th>
+                                <th width="20%">Mobile</th>
+                                <th width="20%">Eamil</th>
+                                <th width="10%">Role</th>
+                                <th width="5%">Edit</th>
+                                <th width="5%">Delete</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END PROJECTS BLOCK -->
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

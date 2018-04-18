@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      >
+    <body>
+        <div th:fragment="admin">
+            <script type="text/javascript" src="js/plugins/jquery/jquery.min.js?v=2.1"></script>
+            <script src="js/plugins/jquery/jquery-ui.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js?v=2.1"></script>
+
+            <script src="js/plugins/angular/angular.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-animate.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-cookies.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-route.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-touch.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/moment.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-moment.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-truncate.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-preload-image.min.js?v=2.1"></script>
+            <!-- END PLUGINS -->
+
+            <!-- MODULES -->
+            <script src="app.routes.js?v=2.1"></script>
+            <script src="app.config.js?v=2.1"></script>
+            <script src="app.services.js?v=2.1"></script>
+            <script src="app.js?v=2.1"></script>
+            <!-- / -->
+            <!-- CONTROLLERS -->
+            <script src="components/view.ctrl.js?v=2.1"></script>
+            <script src="sections/home/home.ctrl.js?v=2.1"></script>
+            <script src="sections/entries/entries.ctrl.js?v=2.1"></script>
+            <script src="sections/users/users.ctrl.js?v=2.1"></script>
+            <script src="sections/workflow/workflow.ctrl.js?v=2.1"></script>
+            <script src="sections/search/search.ctrl.js?v=2.1"></script>
+            <script src="sections/auto/auto.ctrl.js?v=2.1"></script>
+            <!-- / -->
+            <!-- SERVICES -->
+            <script src="services/page.val.js?v=2.1"></script>
+            <script src="services/show.fct.js?v=2.1"></script>
+            <script src="services/entry.fct.js?v=2.1"></script>
+            <script src="services/user.fct.js?v=2.1"></script>
+            <script src="services/auto.fct.js?v=2.1"></script>
+            <script src="services/workflow.fct.js?v=2.1"></script>
+            <!-- / -->
+
+            <!-- START THIS PAGE PLUGINS-->
+            <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js?v=2.1"></script>
+            <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+
+            <script type="text/javascript" src="js/plugins/moment.min.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins/datatables/dataTables.bootstrap.min.js?v=2.1"></script>
+            <!-- END THIS PAGE PLUGINS-->
+
+            <script type="text/javascript" language="javascript" src="js/plugins/datatables/dataTables.buttons.min.js?v=2.1">
+            </script>
+            <script type="text/javascript" language="javascript" src="js/plugins/datatables/buttons.colVis.min.js?v=2.1">
+            </script>
+            <script type="text/javascript" language="javascript" src="js/plugins/notify/notify.min.js?v=2.1"></script>
+            <script type="text/javascript" language="javascript" src="js/plugins/notify/bootbox.min.js?v=2.1"></script>
+            <!-- START TEMPLATE -->
+
+            <script type="text/javascript" src="js/plugins.js?v=2.1"></script>
+            <script type="text/javascript" src="js/actions.js?v=2.1"></script>
+            <script type="text/javascript" src="js/jquery.fileDownload.js?v=2.1"></script>
+
+        </div>
+        <div th:fragment="user">
+            <script type="text/javascript" src="js/plugins/jquery/jquery.min.js?v=2.1"></script>
+            <script src="js/plugins/jquery/jquery-ui.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js?v=2.1"></script>
+
+            <script src="js/plugins/angular/angular.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-animate.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-cookies.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-route.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-touch.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/moment.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-moment.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-truncate.js?v=2.1"></script>
+            <!-- END PLUGINS -->
+
+            <!-- MODULES -->
+            <script src="app.user.routes.js?v=2.1"></script>
+            <script src="app.config.js?v=2.1"></script>
+            <script src="app.services.js?v=2.1"></script>
+            <script src="app.js?v=2.1"></script>
+            <!-- / -->
+            <!-- CONTROLLERS -->
+            <script src="components/view.ctrl.js?v=2.1"></script>
+            <script src="sections/home/home.ctrl.js?v=2.1"></script>
+            <script src="sections/entries/entries.ctrl.js?v=2.1"></script>
+            <script src="sections/users/users.ctrl.js?v=2.1"></script>
+            <script src="sections/workflow/workflow.ctrl.js?v=2.1"></script>
+            <script src="sections/search/search.ctrl.js?v=2.1"></script>
+            <!-- / -->
+            <!-- SERVICES -->
+            <script src="services/show.fct.js?v=2.1"></script>
+            <script src="services/entry.fct.js?v=2.1"></script>
+            <script src="services/user.fct.js?v=2.1"></script>
+            <script src="services/workflow.fct.js?v=2.1"></script>
+            <script src="services/page.val.js?v=2.1"></script>
+            <!-- / -->
+            <!-- DIRECTIVES -->
+
+            <!-- / -->
+
+            <!-- START THIS PAGE PLUGINS-->
+
+            <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js?v=2.1"></script>
+            <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+            <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins/datatables/dataTables.bootstrap.min.js?v=2.1"></script>
+            <!-- END THIS PAGE PLUGINS-->
+
+            <script type="text/javascript" language="javascript" src="js/plugins/datatables/buttons.colVis.min.js?v=2.1">
+            </script>
+            <script type="text/javascript" language="javascript" src="js/plugins/notify/notify.min.js?v=2.1"></script>
+            <script type="text/javascript" language="javascript" src="js/plugins/notify/bootbox.min.js?v=2.1"></script>
+            <!-- START TEMPLATE -->
+            <script type="text/javascript" src="js/jquery.fileDownload.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins.js?v=2.1"></script>
+            <script type="text/javascript" src="js/actions.js?v=2.1"></script>
+        </div>
+
+        <div th:fragment="guest">
+            <script type="text/javascript" src="js/plugins/jquery/jquery.min.js?v=2.1"></script>
+            <script src="js/plugins/jquery/jquery-ui.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins/datatables/dataTables.bootstrap.min.js?v=2.1"></script>
+
+            <script src="js/plugins/angular/angular.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-animate.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-cookies.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-route.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-touch.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/moment.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-moment.min.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-truncate.js?v=2.1"></script>
+            <script src="js/plugins/angular/angular-preload-image.min.js?v=2.1"></script>
+            <!-- END PLUGINS -->
+
+            <!-- MODULES -->
+            <script src="app.guest.routes.js?v=2.1"></script>
+            <script src="app.config.js?v=2.1"></script>
+            <script src="app.services.js?v=2.1"></script>
+            <script src="app.js?v=2.1"></script>
+            <!-- / -->
+            <!-- CONTROLLERS -->
+            <script src="components/view.ctrl.js?v=2.1"></script>
+            <script src="sections/home/home.ctrl.js?v=2.1"></script>
+            <script src="sections/entries/entries.ctrl.js?v=2.1"></script>
+            <script src="sections/users/users.ctrl.js?v=2.1"></script>
+            <script src="sections/workflow/workflow.ctrl.js?v=2.1"></script>
+            <script src="sections/search/search.ctrl.js?v=2.1"></script>
+            <!-- / -->
+            <!-- SERVICES -->
+            <script src="services/show.fct.js?v=2.1"></script>
+            <script src="services/entry.fct.js?v=2.1"></script>
+            <script src="services/user.fct.js?v=2.1"></script>
+            <script src="services/workflow.fct.js?v=2.1"></script>
+            <script src="services/page.val.js?v=2.1"></script>
+            <!-- / -->
+            <!-- DIRECTIVES -->
+
+            <!-- / -->
+
+            <!-- START THIS PAGE PLUGINS-->
+            <script type="text/javascript" src="js/jquery.fileDownload.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js?v=2.1"></script>
+            <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+            <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js?v=2.1"></script>
+            <script type="text/javascript" src="js/plugins/datatables/dataTables.bootstrap.min.js?v=2.1"></script>
+            <!-- END THIS PAGE PLUGINS-->
+
+            <script type="text/javascript" language="javascript" src="js/plugins/datatables/buttons.colVis.min.js?v=2.1">
+            </script>
+            <script type="text/javascript" language="javascript" src="js/plugins/notify/notify.min.js?v=2.1"></script>
+            <script type="text/javascript" language="javascript" src="js/plugins/notify/bootbox.min.js?v=2.1"></script>
+            <!-- START TEMPLATE -->
+
+            <script type="text/javascript" src="js/plugins.js?v=2.1"></script>
+            <script type="text/javascript" src="js/actions.js?v=2.1"></script>
+        </div>
+    </body>
+</html>

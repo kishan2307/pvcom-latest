@@ -1,0 +1,95 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li><a href="#/home">Home</a></li>
+    <li><a href="#/auto">Auto</a></li>
+    <li class="active">{{auto.title}}</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+
+            <form class="form-horizontal" id="autocreateform" page-height>
+                <div class="panel panel-default panel_to_refresh">
+                    <div class="panel-heading ui-draggable-handle">
+                        <h3 class="panel-title">
+                            <strong>{{auto.heading}}</strong></h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="row">
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Email</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                        <input type="email" class="form-control" ng-model="auto.data.email" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Receive Email From</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                        <input type="email" class="form-control" ng-model="auto.data.receiveEmailFrom" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Password</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                        <input type="password" class="form-control" ng-model="auto.data.password" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Host</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                        <input type="text" class="form-control" ng-model="auto.data.host" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Port</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                        <input type="number" class="form-control" ng-model="auto.data.port" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <input class="btn btn-primary pull-right" ng-click="auto.submit($event)" value="submit"
+                               type="submit"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

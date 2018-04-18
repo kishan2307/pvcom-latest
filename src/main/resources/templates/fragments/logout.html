@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<body>
+<div th:fragment="logout">
+    <li class="xn-icon-button pull-right">
+        <a class="mb-control" style="width: 100px;" data-box="#mb-signout" title="Logout" href="javascript:{}"
+           onclick="document.getElementById('frmlogout').submit(); return false;"><span
+                class="" style="font-weight: 800;">Logout</span></a>
+    </li>
+
+    <form sec:authorize="isAuthenticated()" id="frmlogout" th:action="@{/logout}" method="post"
+          class="form-inline ng-hide"></form>
+</div>
+</body>
+</html>

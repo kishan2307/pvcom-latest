@@ -1,0 +1,48 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#/home">Home</a>
+    </li>
+    <li class="active">Duplicate Entries</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START PROJECTS BLOCK -->
+            <div class="panel panel-default" id="entry-list">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong> Duplicate Entries </strong></h3>
+                    <ul class="panel-controls">
+                        <a href="#/entries/create" class="btn btn-primary">Create New</a>
+                    </ul>
+                </div>
+                <div class="panel-body panel_to_refresh" page-height>
+                    <div>
+                        <table class="table datatable">
+                            <thead>
+                            <tr ng-init="entry.init()">
+                                <th width="10%">Date (IRD)</th>
+                                <th width="20%">Local reference Number</th>
+                                <th width="10%">Country</th>
+                                <th width="10%">Seriousness</th>
+                                <th width="10%">Drugs</th>
+                                <th width="10%">LP name</th>
+                                <th width="15%">Created By</th>
+                                <th width="10%">Create case</th>
+                                <th width="10%">Edit</th>
+                                <!--<th width="10%">Delete</th>-->
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END PROJECTS BLOCK -->
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

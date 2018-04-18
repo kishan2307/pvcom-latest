@@ -1,0 +1,160 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li><a href="#/home">Home</a></li>
+    <li><a href="#/users">Users</a></li>
+    <li class="active">{{user.title}}</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+
+            <form class="form-horizontal" id="usercreateform" page-height>
+                <div class="panel panel-default panel_to_refresh">
+                    <div class="panel-heading ui-draggable-handle">
+                        <h3 class="panel-title">
+                            <strong>{{user.heading}}</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p></p>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">First</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-pencil"></span>
+                                            </span>
+                                            <input type="text" class="form-control" required name="w_fname"
+                                                   ng-model="user.data.firstName">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Last Name</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-pencil"></span>
+                                            </span>
+                                            <input type="text" class="form-control" required name="w_lname"
+                                                   ng-model="user.data.lastName">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Password</label>
+                                    <div class="col-md-9 col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-unlock-alt"></span>
+                                            </span>
+                                            <input type="password" class="form-control" required name="w_password"
+                                                   ng-model="user.data.password">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Confirm Password</label>
+                                    <div class="col-md-9 col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-unlock-alt"></span>
+                                            </span>
+                                            <input type="password" class="form-control" required name="w_cpassword"
+                                                   ng-model="user.data.cpassword">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Mobile</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-pencil"></span>
+                                            </span>
+                                            <input type="text" class="form-control" required name="w_mobile"
+                                                   ng-model="user.data.mobile">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Date of Birth</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-calendar"></span>
+                                            </span>
+                                            <input type="text" class="form-control datepicker" required name="w_date"
+                                                   ng-model="user.data.dateOfBirth" date-plugin>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Email</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <span class="fa fa-pencil"></span>
+                                            </span>
+                                            <input type="email" class="form-control" required name="w_email"
+                                                   ng-model="user.data.email">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Country</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control select" required name="w_country"
+                                                ng-model="user.data.country"  ng-options="option.name as option.name for option in user.countrys">
+                                            <option value="">--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Role</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control select" required name="w_role"
+                                                ng-model="user.data.role">
+                                            <option value="">--select--</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="guest">Entry/Triage</option>
+                                            <option value="de">Data Entry</option>
+                                            <option value="qc">Quality Check</option>
+                                            <option value="mr">Medical Review</option>
+                                            <option value="fs">Submission</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">                        
+                        <input class="btn btn-primary pull-right" ng-click="user.submit($event)" value="submit"
+                               type="submit"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

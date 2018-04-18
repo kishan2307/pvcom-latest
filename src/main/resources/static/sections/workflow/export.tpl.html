@@ -1,0 +1,30 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#/home">Home</a>
+    </li>
+    <li class="active">{{workflow.title}}</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap" id="export-div">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DATATABLE EXPORT -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>{{workflow.title}}</strong></h3>
+                </div>
+                <div class="panel-body">                    
+                        <table id="exportTable" class="table datatable table-striped table-bordered" ng-init="workflow.init()" page-height>
+                        </table>                    
+                </div>
+            </div>
+            <!-- END DATATABLE EXPORT -->
+        </div>
+    </div>
+
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

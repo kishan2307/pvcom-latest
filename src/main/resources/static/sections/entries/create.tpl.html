@@ -1,0 +1,200 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#/home">Home</a>
+    </li>
+    <li class="active">{{entry.title}}</li>
+</ul>
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <form class="form-horizontal" id="create-entry-form" ng-init="entry.init()" page-height>
+                <div class="panel panel-default panel_to_refresh">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <strong>{{entry.heading}}</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p></p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Date (IRD)</label>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                                    <input type="text" class="form-control datepicker" ng-model="entry.data.date"
+                                           required date-plugin>
+                                </div>
+                                <span class="help-block">Click on input field to get datepicker</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Company received date</label>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
+                                    <input type="text" class="form-control datepicker"
+                                           ng-model="entry.data.company_receive_date" date-plugin required>
+                                </div>
+                                <span class="help-block">Click on input field to get datepicker</span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Local reference number</label>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                    <input type="text" id="local_uniq_id" class="form-control"
+                                           ng-model="entry.data.local_uniq_id" required
+                                           ng-change="entry.onLocalRferenceChange(entry.data.local_uniq_id)"
+                                           localref-valid/>
+                                    <span class="valid-icon"><i class="fa fa-check"></i><i
+                                            class="fa  fa-times"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Country</label>
+                            <div class="col-md-6 col-xs-12" ng-init="entry.data.country = entry.data.country || ''">
+                                <select class="form-control select" ng-model="entry.data.country"
+                                        ng-options="option.name as option.name for option in entry.countrys" required>
+                                    <option value="">--select--</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Source</label>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                    <input type="text" class="form-control" ng-model="entry.data.source" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Suspect drugs</label>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                    <input type="text" class="form-control" ng-model="entry.data.drugs" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Valid</label>
+                            <div class="col-md-6 col-xs-12">
+                                <select class="form-control select" ng-model="entry.data.valid" required
+                                        ng-options="item for item in entry.validList">
+                                    <option value="">--select--</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Reason if non valid</label>
+                            <div class="col-md-6 col-xs-12">
+                                <textarea class="form-control" rows="3" ng-model="entry.data.reason"
+                                          required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Seriousness</label>
+                            <div class="col-md-6 col-xs-12">
+                                <select class="form-control select" ng-model="entry.data.seriousness" required
+                                        ng-init="entry.data.seriousness?entry.data.seriousness:''">
+                                    <option value="">--select--</option>
+                                    <option value="Serious">Serious</option>
+                                    <option value="Non-Serious">Non-Serious</option>
+                                    <option value="Not-Applicable">Not-Applicable</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">LP name if sharing</label>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                    <input type="text" class="form-control" ng-model="entry.data.lp_name"/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Expedite</label>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-pencil"></span>
+                                    </span>
+                                    <select class="form-control select" ng-model="entry.data.expedite" required
+                                            ng-init="entry.data.expedite?entry.data.expedite:''">
+                                        <option value="">--select--</option>
+                                        <option value="Expedite">Expedite</option>
+                                        <option value="Non-expedite">Non-expedite</option>
+                                        <option value="Not-Applicable">Not-Applicable</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Submission countries</label>
+                            <div class="col-md-6 col-xs-12">
+                                <input type="text" class="form-control" ng-model="entry.data.submission_country"
+                                       required countries-auto/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Triage comments</label>
+                            <div class="col-md-6 col-xs-12">
+                                <textarea class="form-control" rows="3" ng-model="entry.data.triageComment"
+                                          required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-primary pull-right" ng-click="entry.submit($event)">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <div class="form-group col-md-6" style="position: relative;top: -56px;">
+                <div file-upload>
+                    <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+                        <input type="file" id="file-upload" name="file" class="col-md-3"/>
+                    </form>
+                    <span class="btn btn-info" style="margin-top:-5px;" ng-if="entry.data.file_path!=null" file-download="{{entry.data.file_path}}">Download File</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

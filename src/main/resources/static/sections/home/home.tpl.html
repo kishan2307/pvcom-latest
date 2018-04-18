@@ -1,0 +1,153 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#home">Home</a>
+    </li>
+    <li class="active">Dashboard</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+
+    <!-- START WIDGETS -->
+    <div class="row">
+        <div class="col-md-3">
+            <a href="#/entries/unique" class="tile tile-default">
+                {{home.data.entryCount}}
+                <p>New Entries</p>
+                <div class="informer informer-warning">
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/entries/invalid" class="tile tile-default">
+                {{home.data.invalidCount}}
+                <p>Invalid Entries</p>
+                <div class="informer informer-success dir-tr"></div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/entries/potential" class="tile tile-default">
+                {{home.data.potentialCount}}
+                <p>Potential Entries</p>
+                <div class="informer informer-success dir-tr"></div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/flow/list/de" class="tile tile-default">
+                {{home.data.deCount}}
+                <p>Data Entry</p>
+                <div class="informer informer-warning">
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/flow/list/qc" class="tile tile-default">
+                {{home.data.qcCount}}
+                <p>Quality check</p>
+                <div class="informer informer-warning">
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/flow/list/mr" class="tile tile-default">
+                {{home.data.mrCount}}
+                <p>Medical review</p>
+                <div class="informer informer-success dir-tr"></div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/flow/list/fs" class="tile tile-default">
+                {{home.data.fsCount}}
+                <p>Submission</p>
+                <div class="informer informer-success dir-tr"></div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/flow/list/lpc" class="tile tile-default">
+                {{home.data.lpCasesCount}}
+                <p>Licence partner cases</p>
+                <div class="informer informer-success dir-tr"></div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/entries/duplicate" class="tile tile-default">
+                {{home.data.duplicatCount}}
+                <p>Duplicate cases</p>
+                <div class="informer informer-success dir-tr"></div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/flow/list/done" class="tile tile-default">
+                {{home.data.doneCount}}
+                <p>completed cases</p>
+                <div class="informer informer-success dir-tr"></div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#/flow/list/all" class="tile tile-default">
+                {{home.data.deCount+home.data.qcCount+home.data.mrCount+home.data.fsCount}}
+                <p>Active cases</p>
+                <div class="informer informer-success dir-tr"></div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="row" page-height>
+        <div class="col-md-12">
+
+            <!-- START PROJECTS BLOCK -->
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <div class="panel-title-box">
+                        <h3><Stron>Recent activity</stron></h3>                        
+                    </div>
+                    <ul class="panel-controls" style="margin-top: 2px;">
+                        <li>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body panel-body-table" page-height>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th width="10%">Date</th>
+                                <th width="10%">Local Reference number</th>
+                                <th width="10%">WW unique id</th>
+                                <th width="10%">Country</th>
+                                <th width="10%">Source</th>
+                                <th width="10%">Seriousness</th>
+                                <th width="10%">Expedite</th>
+                                <th width="10%">LP case</th>
+                                <th width="10%">Updated By</th>
+                                <th width="10%">Updted on</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="flow in home.rcentFlow">
+                                <td>{{flow.date}}</td>
+                                <td><a href="#/edit/{{flow.id}}">{{flow.uniq}}</a></td>
+                                <td><a href="#/edit/{{flow.id}}">{{flow.local}}</a></td>
+                                <td>{{flow.country}}</td>
+                                <td>{{flow.source}}</td>
+                                <td>{{flow.seriousness}}</td>
+                                <td>{{flow.expedite}}</td>
+                                <td>{{flow.lp}}</td>
+                                <td>{{flow.updatedBy}}</td>                                
+                                <td>{{flow.updatedOn}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END PROJECTS BLOCK -->
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

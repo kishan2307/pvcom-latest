@@ -1,0 +1,367 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#home">Home</a>
+    </li>
+    <li class="active">Filter</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START MODALS -->
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <h3 class="panel-title">Search Fields</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label">From Date (IRD)</label>
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                        <input type="text" class="form-control datepicker ng-pristine ng-valid ng-touched"
+                                               date-plugin="" ng-model="search.data.from">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label">To Date (IRD)</label>
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                        <input type="text" class="form-control datepicker ng-pristine ng-valid ng-touched"
+                                               date-plugin="" ng-model="search.data.to">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h3 style="margin-left: 24%;margin-top: 15px;">AND</h3>
+                    <br>
+                    <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label"> Date (IRD)</label>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                    <input type="text" class="form-control datepicker ng-pristine ng-valid ng-touched"
+                                           date-plugin="" ng-model="search.data.date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label"> Company received date</label>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                    <input type="text" class="form-control datepicker ng-pristine ng-valid ng-touched"
+                                           date-plugin="" ng-model="search.data.company_receive_date">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label"> Local reference number </label>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-touched"
+                                           ng-model="search.data.local_uniq_id">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Country</label>
+                            <div class="col-md-12">
+                                <select class="form-control select"
+                                        ng-model="search.data.country"
+                                        ng-options="option.name as option.name for option in view.data.countries">
+                                    <option value="">--select--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label"> Source</label>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                <input type="text"
+                                       class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched"
+                                       ng-model="search.data.source" required="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label"> Suspect drugs </label>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                    <input type="text" class="form-control ng-pristine ng-valid ng-touched"
+                                           ng-model="search.data.drugs">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label"> Seriousness </label>
+                            <div class="col-md-12">
+                                    <select class="form-control select ng-dirty ng-valid-parse ng-invalid ng-invalid-required ng-touched"
+                                            ng-model="search.data.seriousness" required="">
+                                        <option value="">--select--</option>
+                                        <option value="Serious">Serious</option>
+                                        <option value="Non-Serious">Non-Serious</option>
+                                        <option value="Not-Applicable">Not-Applicable</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label"> Expedite </label>
+                            <div class="col-md-12">
+                                    <select class="form-control select ng-dirty ng-valid-parse ng-touched ng-invalid ng-invalid-required"
+                                            ng-model="search.data.expedite">
+                                        <option value="">--select--</option>
+                                        <option value="Expedite">Expedite</option>
+                                        <option value="Non-expedite">Non-expedite</option>
+                                        <option value="Not-Applicable">Not-Applicable</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label"> LP case </label>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                <input type="text" class="form-control ng-pristine ng-valid ng-touched"
+                                       ng-model="search.data.lp_name">
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="#" class="btn btn-primary pull-right" ng-click="search.submit()">Search</a>
+                </div>
+            </div>
+            <!-- END MODALS -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" ng-show="search.entries!=null">
+            <!-- START PROJECTS BLOCK -->
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <div class="panel-title-box">
+                        <h3><Strong>Entries</strong></h3>
+                    </div>
+                </div>
+                <div class="panel-body panel-body-table" page-height>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th width="10%">Date</th>
+                                <th width="10%">Company received date</th>
+                                <th width="15%">Local reference number</th>
+                                <th width="10%">Country</th>
+                                <th width="10%">Source</th>
+                                <th width="10%">Serious/Non serious</th>
+                                <th width="10%">Drugs</th>
+                                <th width="10%">Valid</th>
+                                <th width="10%">Expedited/Non Expedited</th>
+                                <th width="10%">LP name</th>
+                                <th width="5%">Select</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="flow in search.entries">
+                                <td>{{flow.date}}</td>
+                                <td>{{flow.company_receive_date}}</td>
+                                <td><a href="#/entry/{{flow.id}}">{{flow.local_uniq_id}}</a></td>
+                                <td>{{flow.country}}</td>
+                                <td>{{flow.source}}</td>
+                                <td>{{flow.seriousness}}</td>
+                                <td>{{flow.drugs}}</td>
+                                <td>{{flow.valid}}</td>
+                                <td>{{flow.expedite}}</td>
+                                <td>{{flow.lp_name}}</td>
+                                <td class="text-center">
+                                    <input type="checkbox" ng-model="flow.select" ng-if="flow.valid=='YES'">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-footer" ng-if="search.entries!=null">
+                    <button href="#" class="btn btn-primary pull-right" ng-click="search.assign('entry')">Assign selected cases</button>
+                    <button href="#" class="btn btn-info pull-right" ng-click="search.exportEntries()" style="margin-right:10px;">Export</button>
+                </div>
+            </div>
+            <!-- END PROJECTS BLOCK -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" ng-show="search.cases!=null">
+            <!-- START PROJECTS BLOCK -->
+            <div class="panel panel-default panel_to_refresh">
+                <div class="panel-heading ui-draggable-handle">
+                    <div class="panel-title-box">
+                        <h3><Strong>Cases</strong></h3>
+                    </div>
+                </div>
+                <div class="panel-body panel-body-table" page-height>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th width="10%">Date</th>
+                                <th width="10%">Company received date</th>
+                                <th width="15%">worldwide unique id</th>
+                                <th width="15%">Local reference number</th>
+                                <th width="10%">Country</th>
+                                <th width="10%">Source</th>
+                                <th width="10%">Serious/Non serious</th>
+                                <th width="10%">Drugs</th>
+                                <th width="10%">Expedited/Non Expedited</th>
+                                <th width="10%">LP name</th>
+                                <th width="10%">Status</th>
+                                <th width="5%">Select</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="flow in search.cases">
+                                <td>{{flow.workflow.date}}</td>
+                                <td>{{flow.workflow.company_receive_date}}</td>
+                                <td><a href="#/edit/{{flow.id}}">{{flow.worldWideUniqId}}</a></td>
+                                <td><a href="#/edit/{{flow.id}}">{{flow.workflow.local_uniq_id}}</a></td>
+                                <td>{{flow.workflow.country}}</td>
+                                <td>{{flow.workflow.source}}</td>
+                                <td>{{flow.workflow.seriousness}}</td>
+                                <td>{{flow.workflow.drugs}}</td>
+                                <td>{{flow.workflow.expedite}}</td>
+                                <td>{{flow.workflow.lp_name}}</td>
+                                <td>
+                                    <span class="label label-success" ng-if="flow.status==1">DE</span>
+                                    <span class="label label-success" ng-if="flow.status==2">QC</span>
+                                    <span class="label label-success" ng-if="flow.status==3">MR</span>
+                                    <span class="label label-success" ng-if="flow.status==4">Submission</span>
+                                    <span class="label label-success" ng-if="flow.status==5">CLOSED</span>
+                                </td>
+                                <td class="text-center"><input type="checkbox" ng-model="flow.select"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-footer" ng-if="search.cases!=null">
+                    <button href="#" class="btn btn-primary pull-right" style="margin-left: 10px;" ng-click="search.assign('cases')">Assign selected cases</button>
+                    <button href="#" class="btn btn-info pull-right" ng-click="search.exportcases()">Export</button>
+                </div>
+            </div>
+            <!-- END PROJECTS BLOCK -->
+        </div>
+    </div>
+</div>
+
+
+<div id="mymodel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">Select and Assign</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="control-label">Select Data entry user</label>
+                        <div class="col-md-12">
+                            <select class="form-control select" ng-model="search.assignd.de"
+                                    ng-options="obj.id as obj.name for obj in search.getList('de')">
+                                <option value="">--select--</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="control-label">Select Quality check user</label>
+                        <div class="col-md-12">
+                            <select class="form-control select" ng-model="search.assignd.qc"
+                                    ng-options="obj.id as obj.name for obj in search.getList('qc')">
+                                <option value="">--select--</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="control-label">Select Medical review user</label>
+                        <div class="col-md-12">
+                            <select class="form-control select" ng-model="search.assignd.mr"
+                                    ng-options="obj.id as obj.name for obj in search.getList('mr')">
+                                <option value="">--select--</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="control-label">Select submission user</label>
+                        <div class="col-md-12">
+                            <select class="form-control select" ng-model="search.assignd.fs"
+                                    ng-options="obj.id as obj.name for obj in search.getList('fs')">
+                                <option value="">--select--</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="search.assignSubmit()">Assign</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- END PAGE CONTENT WRAPPER -->

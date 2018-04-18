@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+>
+<body>
+<div th:fragment="admin">
+    <ul class="x-navigation page-navigation-toggled">
+        <li class="xn-logo">
+            <a href="/">PvCOM</a>
+            <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="xn-profile">
+            <th:block th:replace="fragments/profile :: profile"></th:block>
+        </li>
+        <li class="xn-title">Navigation</li>
+        <li ng-class="pageTab=='home'?'active':''">
+            <a href="#/home">
+                <span class="fa fa-desktop"></span>
+                <span class="xn-text">Dashboard</span>
+            </a>
+        </li>
+        <li ng-class="pageTab=='user'?'active':''">
+            <a href="#/users">
+                <span class="fa fa-users"></span>
+                <span class="xn-text">Manage Users</span>
+            </a>
+        </li>
+        <li>
+            <a href="#/entries/create">
+                <span class="fa fa-pencil"></span>
+                <span class="xn-text">Create Entry</span>
+            </a>
+        </li>
+        <li ng-class="pageTab=='filter'?'active':''">
+            <a href="#/filter">
+                <span class="fa fa-search"></span>
+                <span class="xn-text">Search</span>
+            </a>
+        </li>
+        <li ng-class="pageTab=='newcase'?'active':''">
+            <a href="#/case/new">
+                <span class="fa fa-edit"></span><span class="xn-text">Create case</span></a>
+        </li>
+        <li>
+            <a href="#/auto">
+                <span class="fa fa-recycle"></span>
+                <span class="xn-text">Auto Receipt</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div th:fragment="user">
+    <ul class="x-navigation page-navigation-toggled">
+        <li class="xn-logo">
+            <a href="/">PvCOM</a>
+            <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="xn-profile">
+            <th:block th:replace="fragments/profile :: profile"></th:block>
+        </li>
+        <li class="xn-title">Navigation</li>
+        <li ng-class="pageTab=='home'?'active':''">
+            <a href="#/home">
+                <span class="fa fa-desktop"></span>
+                <span class="xn-text">Dashboard</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div th:fragment="guest">
+    <ul class="x-navigation page-navigation-toggled">
+        <li class="xn-logo">
+            <a href="Dashboard.html">Pvcom</a>
+            <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="xn-profile">
+            <th:block th:replace="fragments/profile :: profile"></th:block>
+        </li>
+        <li class="xn-title">Navigation</li>
+        <li ng-class="pageTab=='home'?'active':''">
+            <a href="#/home">
+                <span class="fa fa-desktop"></span>
+                <span class="xn-text">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="#/entries/create">
+                <span class="fa fa-pencil"></span>
+                <span class="xn-text">Create Entry</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

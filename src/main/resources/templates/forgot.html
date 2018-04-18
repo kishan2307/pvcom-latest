@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="body-full-height">
+<head>
+    <!-- META SECTION -->
+    <title>PvCOM</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <!-- END META SECTION -->
+
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" id="theme" th:href="@{/css/theme-default.css}" href="css/theme-default.css"/>
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-box animated fadeInDown">
+        <div class="login-logo"></div>
+        <div class="login-body">
+            <div class="login-title"><strong>Forgot Password</strong></div>
+            <form th:action="@{/forgot}" method="post" class="form-horizontal">
+                <div th:if="${error}">
+                    <div class="alert alert-danger">
+                        <span th:text="${error}"></span>
+                    </div>
+                </div>
+                <div th:if="${success}">
+                    <div class="alert alert-info">
+                        Your password have been sent successfully.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="text" name="email" id="username" class="form-control"
+                               placeholder="Enter username" required="true" autofocus="true"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <a href="/login" th:href="@{/login}" class="btn btn-link btn-block">Login</a>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" class="btn btn-info btn-block" value="Reset My Password"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="login-footer">
+            <div class="pull-left">
+                &copy; 2018 PvCOM.COM
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

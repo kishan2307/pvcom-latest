@@ -1,0 +1,48 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#/home">Home</a>
+    </li>
+    <li class="active">{{entry.heading}}</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START PROJECTS BLOCK -->
+            <div class="panel panel-default" id="entry-list">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>{{entry.heading}}</strong></h3>
+                    <ul class="panel-controls">
+                        <a href="#/entries/create" class="btn btn-primary">Create New</a>
+                    </ul>
+                </div>
+                <div class="panel-body panel_to_refresh" page-height>                    
+                        <table class="table datatable table-striped table-bordered">
+                            <thead>
+                            <tr ng-init="entry.init()">
+                                <th width="10%">Date (IRD)</th>
+                                <th width="20%">Local reference Number</th>
+                                <th width="10%">Country</th>
+                                <th width="10%">Source</th>
+                                <th width="10%">Suspect Drugs</th>
+                                <th width="10%">Valid</th>
+                                <th width="10%">Serious/Non-Serious</th>
+                                <th width="10%">Expedite/Non Expedite</th>
+                                <th width="10%">LP name</th>
+                                <th width="15%">Created By</th>
+                                <th width="10%">Assign</th>
+                                <!--<th width="10%">Delete</th>-->
+                            </tr>
+                            </thead>
+                        </table>                    
+                </div>
+            </div>
+            <!-- END PROJECTS BLOCK -->
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT WRAPPER -->

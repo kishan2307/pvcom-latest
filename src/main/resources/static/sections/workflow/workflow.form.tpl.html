@@ -1,0 +1,487 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#/home">Home</a>
+    </li>
+    <li class="active">{{workflow.title}}</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap" id="worklow-form">
+    <div class="panel panel-info panel_to_refresh">
+        <form class="ng-pristine ng-valid" page-height>  
+            <div class="row">
+                <div class="col-md-12 scCol ui-sortable">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading ui-draggable-handle">
+                            <h3 class="panel-title"><strong>Basic Details</strong></h3>
+                            <p class="pull-right ceat-label" ng-show="workflow.entryby!=null"><strong>Entry created by :</strong> <span ng-bind="workflow.entryby"></span></p>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">   
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Date (IRD)</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                                <input type="text" class="form-control datepicker" date-plugin
+                                                       ng-model="workflow.data.workflow.date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Company received date</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                                <input type="text" class="form-control datepicker" date-plugin
+                                                       ng-model="workflow.data.workflow.company_receive_date">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Local reference number </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control"
+                                                       ng-model="workflow.data.workflow.local_uniq_id">
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-3 three">
+                                    <div class="form-group">
+                                        <label class="control-label"> Country</label>
+                                        <div class="col-md-12">
+                                            <select class="form-control select"
+                                                    ng-model="workflow.data.workflow.country" required ng-options="option.name as option.name for option in workflow.countrys">
+                                                <option value="">--select--</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="row">   
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Source</label>
+                                        <div class="col-md-12">                                            
+                                            <input type="text" class="form-control" ng-model="workflow.data.workflow.source" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Suspect drugs </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control"
+                                                       ng-model="workflow.data.workflow.drugs">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Valid </label>
+                                        <div class="col-md-12" ng-init="workflow.data.workflow.valid = workflow.data.workflow.valid || ''">
+                                            <select class="form-control select" ng-model="workflow.data.workflow.valid"
+                                                    ng-options="item for item in workflow.validList">
+                                                <option value="">--select--</option>
+                                            </select>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="col-md-3 four">
+                                    <div class="form-group">
+                                        <label class="control-label"> Reason if non valid </label>
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control"
+                                                   ng-model="workflow.data.workflow.reason"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class="row">   
+                                <div class="col-md-3">                                        
+                                    <div class="form-group">
+                                        <label class="control-label"> Seriousness </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>                                                
+                                                <select class="form-control select" ng-model="workflow.data.workflow.seriousness" required
+                                                        ng-init="workflow.data.workflow.seriousness?workflow.data.workflow.seriousness:''">
+                                                    <option value="">--select--</option>
+                                                    <option value="Serious">Serious</option>
+                                                    <option value="Non-Serious">Non-Serious</option>
+                                                    <option value="Not-Applicable">Not-Applicable</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Expedite </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>                                                
+                                                <select class="form-control select" ng-model="workflow.data.workflow.expedite" required
+                                                        ng-init="workflow.data.workflow.expedite?workflow.data.workflow.expedite:''">
+                                                    <option value="">--select--</option>
+                                                    <option value="Expedite">Expedite</option>
+                                                    <option value="Non-expedite">Non-expedite</option>
+                                                    <option value="Not-Applicable">Not-Applicable</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> Submission countries</label>
+                                        <div class="col-md-12">                                            
+                                            <input type="text" class="form-control" ng-model="workflow.data.workflow.submission_country" required countries-auto/>
+                                        </div>
+                                    </div>
+                                </div>               
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label"> LP name if sharing </label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control"
+                                                       ng-model="workflow.data.workflow.lp_name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                            <div class="row">   
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Triage comments</label>
+                                        <div class="col-xs-12">
+                                            <input type="text" class="form-control" ng-model="workflow.data.workflow.triageComment"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <span class="btn btn-info" style="margin-top: 21px;" ng-if="workflow.data.workflow.file_path!=null" file-download="{{workflow.data.workflow.file_path}}">Download File</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" ng-if="view.data.role == 'admin'">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading ui-draggable-handle">
+                            <h3 class="panel-title"><strong>Assign cases</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="control-label">Select Data entry user</label>
+                                    <div class="col-md-12">
+                                        <select class="form-control select" ng-model="workflow.data.deUserId"
+                                                ng-options="obj.id as obj.name for obj in workflow.getList('de')">
+                                            <option value="">--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="control-label">Select Quality check user</label>
+                                    <div class="col-md-12">
+                                        <select class="form-control select" ng-model="workflow.data.qcUserId"
+                                                ng-options="obj.id as obj.name for obj in workflow.getList('qc')">
+                                            <option value="">--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="control-label">Select Medical review user</label>
+                                    <div class="col-md-12">
+                                        <select class="form-control select" ng-model="workflow.data.mrUserId"
+                                                ng-options="obj.id as obj.name for obj in workflow.getList('mr')">
+                                            <option value="">--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="control-label">Select submission user</label>
+                                    <div class="col-md-12">
+                                        <select class="form-control select" ng-model="workflow.data.fsUserId"
+                                                ng-options="obj.id as obj.name for obj in workflow.getList('fs')">
+                                            <option value="">--select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="panel-footer">
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row scRow">
+                <div class="col-md-12" ng-if="workflow.data.workflow.de">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Data entry case</strong></h3>
+                            <p class="pull-right ceat-label" ng-show="workflow.deby!=null"><strong>Data Entry done by :</strong> <span ng-bind="workflow.deby"></span></p>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">World-wide unique ID</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control"
+                                                       ng-model="workflow.data.worldWideUniqId">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">DE done date</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                                <input type="text" class="form-control datepicker" date-plugin
+                                                       ng-model="workflow.data.workflow.de.doneDate">
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>    
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Comment box</label>
+                                        <div class="col-md-12 col-xs-12">
+                                            <textarea class="form-control" rows="1"
+                                                      ng-model="workflow.data.workflow.de.comment" ng-readonly="view.getCommentAccess('de')"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" ng-if="workflow.data.workflow.qc">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading ui-draggable-handle">
+                            <h3 class="panel-title"><strong>Quality check</strong></h3>
+                            <p class="pull-right ceat-label" ng-show="workflow.qcby!=null"><strong>Quality check done by :</strong> <span ng-bind="workflow.qcby"></span></p>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">World-wide unique ID</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control"
+                                                       ng-model="workflow.data.worldWideUniqId">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">QC done date</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                                <input type="text" class="form-control datepicker" date-plugin
+                                                       ng-model="workflow.data.workflow.qc.doneDate">
+                                            </div>
+                                            <span class="help-block">Click on input field to get datepicker</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Comment box</label>
+                                        <div class="col-md-12 col-xs-12">
+                                            <textarea class="form-control" rows="1"
+                                                      ng-model="workflow.data.workflow.qc.comment" ng-readonly="view.getCommentAccess('qc')"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="panel-footer">
+                            <button class="btn btn-default">Back</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="col-md-12" ng-if="workflow.data.workflow.mr">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading ui-draggable-handle">
+                            <h3 class="panel-title"><strong>Medical review</strong></h3>
+                            <p class="pull-right ceat-label" ng-show="workflow.mrby!=null"><strong>Medical review done by :</strong> <span ng-bind="workflow.mrby"></span></p>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">World-wide unique ID</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control"
+                                                       ng-model="workflow.data.worldWideUniqId">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">MR done date</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                                <input type="text" class="form-control datepicker" date-plugin
+                                                       ng-model="workflow.data.workflow.mr.doneDate">
+                                            </div>
+                                            <span class="help-block">Click on input field to get datepicker</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Comment box</label>
+                                        <div class="col-md-12 col-xs-12">
+                                            <textarea class="form-control" rows="1"
+                                                      ng-model="workflow.data.workflow.mr.comment" ng-readonly="view.getCommentAccess('mr')"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="panel-footer">
+                             <button class="btn btn-default">Back</button>
+                             <button class="btn btn-primary pull-right">Submit</button>
+                         </div>-->
+                    </div>
+                </div>
+                <div class="col-md-12" ng-if="workflow.data.workflow.fs">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading ui-draggable-handle">
+                            <h3 class="panel-title"><strong>Final Submission</strong></h3>
+                            <p class="pull-right ceat-label" ng-show="workflow.fsby!=null"><strong>Submission done by :</strong> <span ng-bind="workflow.fsby"></span></p>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">World-wide unique ID</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-pencil"></span>
+                                                </span>
+                                                <input type="text" class="form-control"
+                                                       ng-model="workflow.data.worldWideUniqId">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">                                        
+                                        <label class="control-label"> Submission countries</label>
+                                        <div class="col-md-12">                                            
+                                            <input type="text" class="form-control" ng-model="workflow.data.workflow.fs.country" required countries-auto/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Submission Date</label>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <span class="fa fa-calendar"></span>
+                                                </span>
+                                                <input type="text" class="form-control datepicker" date-plugin
+                                                       ng-model="workflow.data.workflow.fs.doneDate">
+                                            </div>
+                                            <span class="help-block">Click on input field to get datepicker</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Comment box</label>
+                                        <div class="col-md-12 col-xs-12">
+                                            <textarea class="form-control" rows="2"
+                                                      ng-model="workflow.data.workflow.fs.comment" ng-readonly="view.getCommentAccess('fs')"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="panel-footer">
+                            <button class="btn btn-default">Back</button>
+                            <button class="btn btn-primary pull-right">Submit</button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-primary pull-right" ng-click="workflow.submit($event)">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<script>
+    //$('.datatable').DataTable();
+    setTimeout(function () {
+    $('.page-content').height('100%');
+    }, 500);</script>

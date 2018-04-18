@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
+<head th:replace="fragments/header :: header"></head>
+
+<body ng-app="app" ng-controller="ViewController as view">
+<!-- START PAGE CONTAINER -->
+<div class="page-loader" data-ng-show="view.data.loading">
+    <div class="throbber loader"></div>
+</div>
+<div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+        <!-- START X-NAVIGATION -->
+        <div th:replace="fragments/sidemenu :: user"></div>
+        <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <!-- START X-NAVIGATION VERTICAL -->
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <!-- TOGGLE NAVIGATION -->
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize">
+                    <span class="fa fa-dedent"></span>
+                </a>
+            </li>
+            <!-- END TOGGLE NAVIGATION -->
+            <!-- SEARCH -->
+            <li class="xn-search">
+                <form role="form">
+                    <input type="text" add-search placeholder="Local Ref number Or WW unique id" name="search"/>
+                </form>
+            </li>
+            <!-- END SEARCH -->
+            <!-- SIGN OUT -->
+            <div th:replace="fragments/logout :: logout"><span class="fa fa-sign-out"></span></div>
+            <!-- END SIGN OUT -->
+            <!-- MESSAGES -->
+
+            <!-- END MESSAGES -->
+            <!-- TASKS -->
+
+            <!-- END TASKS -->
+        </ul>
+        <!-- END X-NAVIGATION VERTICAL -->
+
+        <div class="main-container">
+            <div ng-view></div>
+        </div>
+
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+
+<!-- MESSAGE BOX-->
+<div class="message-box animated fadeIn" data-sound="alert" data-ng-show="view.data.logout" style="display: none;">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title">
+                <span class="fa fa-sign-out"></span> Log
+                <strong>Out</strong> ?
+            </div>
+            <div class="mb-content">
+                <p>Are you sure you want to log out?</p>
+                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+            </div>
+            <div class="mb-footer">
+                <div class="pull-right">
+                    <a href="logout" class="btn btn-success btn-lg">Yes</a>
+                    <button class="btn btn-default btn-lg mb-control-close">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MESSAGE BOX-->
+
+<!-- START PLUGINS -->
+<th:block th:replace="fragments/scripts :: user"></th:block>
+<!-- END TEMPLATE -->
+
+</body>
+
+</html>

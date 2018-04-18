@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head th:replace="fragments/header :: header"></head>
+
+<body ng-app="app" ng-controller="ViewController as view">
+<!-- START PAGE CONTAINER -->
+<div class="page-loader" data-ng-show="view.data.loading">
+    <div class="throbber loader"></div>
+</div>
+<div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+        <!-- START X-NAVIGATION -->
+        <div th:replace="fragments/sidemenu :: guest"></div>
+        <!-- END X-NAVIGATION -->
+    </div>
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <!-- START X-NAVIGATION VERTICAL -->
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <!-- TOGGLE NAVIGATION -->
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize">
+                    <span class="fa fa-dedent"></span>
+                </a>
+            </li>
+            <!-- END TOGGLE NAVIGATION -->
+            <!-- SEARCH -->
+            <li class="xn-search">
+                <form role="form">
+                    <input type="text" name="search" add-search placeholder="Local Ref number Or WW unique id"/>
+                </form>
+            </li>
+
+            <div th:replace="fragments/logout :: logout"><span class="fa fa-sign-out"></span></div>
+        </ul>
+        <!-- END X-NAVIGATION VERTICAL -->
+
+        <div class="main-container">
+            <div ng-view></div>
+        </div>
+
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- START PLUGINS -->
+<th:block th:replace="fragments/scripts :: guest"></th:block>
+<!-- END TEMPLATE -->
+
+</body>
+
+</html>

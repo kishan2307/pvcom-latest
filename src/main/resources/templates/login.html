@@ -1,0 +1,114 @@
+<html xmlns:th="http://www.thymeleaf.org" class="body-full-height">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <title>Pvcom | Log in</title>        
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">                
+        <link rel="stylesheet" th:href="@{/css/fontawesome/font-awesome.min.css}" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>                                   
+        <link rel="stylesheet" th:href="@{/css/bootstrap/bootstrap.min.css}" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>                                   
+        <style>
+            body {
+                font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+                font-weight: 400;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+            .login-logo, .register-logo {
+                font-size: 35px;
+                text-align: center;
+                margin-bottom: 25px;
+                font-weight: 300;
+            }
+            .login-box-body, .register-box-body {
+                background: #fff;
+                padding: 10px;
+                border-top: 0;
+                color: #666;
+            }
+            .login-box-msg, .register-box-msg {
+                margin: 0;
+                text-align: center;
+                padding: 0 20px 20px 20px;
+            }
+            .form-control {
+                border-radius: 0;
+                box-shadow: none;
+                border-color: #d2d6de;
+            }
+            .form-control:not(select) {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+            .btn.btn-flat {
+                border-radius: 0;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                border-width: 1px;
+            }
+            .btn-primary:hover, .btn-primary:active, .btn-primary.hover {
+                background-color: #367fa9;
+            }
+            .login-page{ background: #fff!important;}
+            .login_panel {height:100%;overflow-y: auto;
+                overflow-x: hidden;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;}
+            div#background_branding_container {left: 0; top: 0; overflow: hidden;z-index: 0;opacity: 1;height: 100%; transition: opacity 1s; -moz-transition: opacity 1s; -webkit-transition: opacity 1s; -o-transition: opacity 1s; -ms-transition: opacity 1s; transition-property: opacity; transition-duration: 1s;}
+            .login-logo a, .register-logo a {color: #444;text-decoration: none;}
+            .login-logo b, login-logo strong {
+                font-weight: 700;
+            }
+
+        </style>
+    </head>
+    <body class="hold-transition login-page">
+        <div class="row">
+        <div id="background_branding_container" class="hidden-sm hidden-xs hidden-sm col-md-8">
+            <img th:src="@{img/loginbg-min.jpeg}" width="1000">
+        </div>
+        <div class="login-box login_panel col-md-4">
+            <div class="login-logo">
+                <!--<img th:src="@{img/pvcom.svg}" style="width: 250px;">   -->
+                <a href="index2.html"><b>PvCOM</b></a>
+            </div>
+            <!-- /.login-logo -->
+            <div class="login-box-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+                <form th:action="@{/login}" method="post">
+                    <div th:if="${param.error}">
+                        <div class="alert alert-danger">
+                            Invalid username and password.
+                        </div>
+                    </div>
+                    <div th:if="${param.logout}">
+                        <div class="alert alert-info">
+                            You have been logged out.
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <a href="/forgot" th:href="@{/forgot}" class="btn btn-link btn-block" style="text-align: left;">Forgot your password?</a>
+                        </div>                        
+                        <div class="col-xs-4">
+                            <button type="submit" name="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        </div>                        
+                    </div>
+                </form>
+            </div>            
+        </div>
+        </div>
+    </body>
+</html>

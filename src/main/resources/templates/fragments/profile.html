@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<body>
+<div th:fragment="profile">
+    <div class="profile" id="profile"
+         th:attr="data-id=${user.getId()},data-email=${user.getEmail()},data-role=${user.getRole()}">
+        <div class="profile-image">
+            <!--<img src="assets/images/users/avatar.jpg" alt="John Doe" />-->
+        </div>
+        <div class="profile-data">
+            <div class="profile-data-name" th:text="${name}">Kishan Patel</div>
+            <div class="profile-data-title"><B style="text-transform: uppercase" th:text="${roleTitle}"></B></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
